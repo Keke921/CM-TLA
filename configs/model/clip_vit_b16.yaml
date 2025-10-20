@@ -1,0 +1,35 @@
+backbone: "CLIP-ViT-B/16"
+resolution: 224
+
+output_dir: iNat_CLIP_TKLA-film_tte_multiscale
+print_freq: 100
+
+seed: 0
+deterministic: True
+gpu: 0
+num_workers: 8
+prec: "amp"
+
+num_epochs: 30
+batch_size: 128
+micro_batch_size: 128
+lr: 0.01
+weight_decay: 5e-4
+momentum: 0.9
+loss_type: "TKLA" # 'EMO' #"LA" #'CE' ##'GCL' #
+reweight_epoch: -1
+#EMO_enable: True
+#loss_type_EMO_m: 0.8
+
+classifier: "CosineClassifier"
+
+init_head: "text_feat"
+tte: True #False  #
+tte_mode: 'multiscale' #'fivecrop' #"fixcrop_flip"
+#expand: 24
+
+#adaptformer: True
+#vpt_deep: True
+cwadaptformer: True
+
+
